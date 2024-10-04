@@ -19,18 +19,18 @@ const UserSearch: React.FC<UserSearchProps> = ({ guests }) => {
     };
     return (
         <div>
-            <h3>User Search</h3>
-            <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
-            <button onClick={onclick}>Find User</button>
-            <div>
+            <h3 className="text-xl font-bold mb-2">People Search</h3>
+            <input className="border p-2" type="text" value={name} onChange={(e) => setName(e.target.value)} />
+            <button className="bg-orange-500 p-2 font-bold font-sans rounded-md" onClick={onclick}>Find Guest</button>
+            <div className="mt-2">
                 {user.length > 0 ? (
                     user.map((g, index) => (
-                        <div key={index}>
+                        <div className="bg-white p-2" key={index}>
                             <p>{g.name} ({g.age} year)</p>
                         </div>
                     ))
                 ) : (
-                    <p>No users found</p>
+                    <span className=" p-1">No guest found</span>
                 )}
             </div>
         </div>
